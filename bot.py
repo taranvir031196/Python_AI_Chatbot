@@ -82,7 +82,8 @@ except:
 
 
 def bag_of_words(s, words):
-    bag = []
+
+    bag = [0 for _ in range(len(words))]
 
     s_words = nltk.word_tokenize(s)
     s_words = [stemmer.stem(word.lower()) for word in s_words]
@@ -109,6 +110,7 @@ def chat():
         for tg in data["intents"]:
             if tg['tag'] == tag:
                 responses = tg['responses']
+
         print(random.choice(responses))
 
 
